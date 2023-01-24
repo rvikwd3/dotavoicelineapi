@@ -38,12 +38,13 @@ RUN npm run prod
 FROM node:alpine as run-container
 WORKDIR /usr/app/run
 # Copy over built files from backend into root
+COPY --from=backend /usr/app/backend/package*.json ./
 COPY --from=backend /usr/app/backend/dist ./
 COPY --from=backend /usr/app/backend/.env ./
 # Copy over backend public files into public folder
 COPY --from=backend /usr/app/backend/public ./public
 # Copy over built asset & view files from obsBrowserSource
-COPY --from=browserSource /usr/app/browserSource/dist/index.html ./views/pages/obsBrowserSource
+COPY --from=browserSource /usr/app/browserSource/dist/index.html ./views/pages/obsBrowserSource/index.html
 COPY --from=browserSource /usr/app/browserSource/dist/assets ./public/assets
 # Copy over built asset & view files from frontend
 COPY --from=frontend /usr/app/frontend/dist/index.html ./views/pages/frontend/index.html
