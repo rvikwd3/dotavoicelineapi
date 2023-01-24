@@ -7,7 +7,7 @@
     "tsc": "tsc",
     "build": "tsc && vite build",
     "dev": "vite dev",
-    "prod": "tsc && vite build"
+    "prod": "vite build"
   },
   "author": "Ravikiran Kawade",
   "license": "MIT",

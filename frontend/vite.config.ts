@@ -14,9 +14,9 @@ export default defineConfig({
         register: resolve(__dirname, "./userRegistrationPage/index.html"),
       },
       output: {
-        entryFileNames: "static/assets/frontend-[name].js",
-        chunkFileNames: "static/assets/frontend-[name].js",
-        assetFileNames: "static/assets/frontend-[name].[ext]",
+        entryFileNames: "assets/frontend-[name].js",
+        chunkFileNames: "assets/frontend-[name].js",
+        assetFileNames: "assets/frontend-[name].[ext]",
       },
     },
     manifest: true,

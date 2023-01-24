@@ -6,9 +6,9 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       output: {
-        entryFileNames: "static/assets/obsBrowserSource-[name].js",
-        chunkFileNames: "static/assets/obsBrowserSource-[name].js",
-        assetFileNames: "static/assets/obsBrowserSource-[name].[ext]",
+        entryFileNames: "assets/obsBrowserSource-[name].js",
+        chunkFileNames: "assets/obsBrowserSource-[name].js",
+        assetFileNames: "assets/obsBrowserSource-[name].[ext]",
       }
     },
     manifest: true,
