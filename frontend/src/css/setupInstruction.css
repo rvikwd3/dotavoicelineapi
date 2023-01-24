@@ -1,0 +1,120 @@
+.setupInstructionFlexContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 120px;
+}
+
+.setupInstructionFlexContainer > .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: 390px;
+}
+
+.setupInstructionFlexContainer > .content > .subtitle {
+  height: 21px;
+  font-weight: 800;
+  font-size: 18px;
+
+  color: #c37367;
+}
+
+.setupInstructionFlexContainer > .content > .headerContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.setupInstructionFlexContainer > .content > .headerContainer > .headerIcon {
+  width: 44px;
+  height: 44px;
+  stroke: #fff;
+}
+
+.setupInstructionFlexContainer > .content > .headerContainer > .headerText {
+  height: 27px;
+  font-weight: 800;
+  font-size: 32px;
+
+  color: #fff;
+}
+
+.setupInstructionFlexContainer > .content > .description {
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+}
+
+.setupInstructionFlexContainer .setupInstructionImage {
+  position: absolute;
+  max-width: 480px;
+  max-height: 280px;
+
+  /* Overriden by .selectedImage */
+  opacity: 0;
+	transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  width: 480px;
+  height: 280px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.20));
+  border-radius: 24px;
+  transform: translateY(0);
+  transition: filter 0.3s cubic-bezier(0.33, 1, 0.68, 1), transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.images:hover {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.35));
+  transform: translateY(-2px);
+  transition: filter 0.3s cubic-bezier(0.33, 1, 0.68, 1), transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.carousel > .images > .selectedImage {
+  opacity: 1;
+	transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.carouselSelectorContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.carouselSelector {
+  margin-top: 12px;
+  cursor: pointer;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  background: #d9d9d9;
+
+  opacity: 13%;
+	transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.selectedCarousel {
+  cursor: default;
+
+  opacity: 100%;
+	transition: opacity 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}

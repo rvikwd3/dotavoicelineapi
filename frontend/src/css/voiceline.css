@@ -1,0 +1,55 @@
+.voicelineCommand {
+  color: rgb(156, 163, 175);
+  font-weight: 700;
+  text-align: right;
+  font-size: 18px;
+  cursor: auto;
+}
+
+.voicelineHeroIcon {
+  width: 32px;
+  height: 32px;
+  justify-self: center;
+  cursor: auto;
+}
+
+.voicelinePlusTier {
+  width: 32px;
+  height: 32px;
+  justify-self: center;
+  cursor: auto;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.voicelineText {
+  filter: drop-shadow(rgba(0, 0, 0, 0.05) 0px 1px 1px);
+  font-size: 20px;
+  font-weight: 700;
+  background-clip: text;
+  background-image: linear-gradient(rgb(223, 241, 244), rgb(173, 215, 224));
+  color: transparent;
+  line-height: 28px;
+}
+
+.voicelineCopyIconContainer {
+  justify-self: end;
+  width: 38px;
+  height: 38px;
+  margin-right: 32px;
+
+  cursor: pointer;
+  stroke: rgb(212, 212, 212);
+  color: rgb(212, 212, 212);
+  filter: drop-shadow(rgba(0, 0, 0, 0.05) 0px 1px 1px);
+}
+
+.voicelineCopyIcon {
+  width: 38px;
+  height: 38px;
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.voicelineCopyIcon:active {
+  transform: scale(0.75);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+}

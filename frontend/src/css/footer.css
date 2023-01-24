@@ -1,0 +1,107 @@
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 120px;
+  gap: 42px;
+
+  background: #0e0e0e;
+}
+
+.footerLinkContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+
+  width: 80%;
+}
+
+.footerLink {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  color: #fff;
+	transition: color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.footerLink:hover {
+  color: #c37367;
+	transition: color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.projectRepoLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  color: #fff;
+	transition: color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.projectRepoLink:hover {
+  color: #c37367;
+	transition: color 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.footerGithubIcon {
+  width: 32px;
+  height: 32px;
+}
+
+.footerVanity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  
+  width: 360px;
+}
+
+.footerVanity > .vanity {
+  font-weight: 600;
+  font-size: 20px;
+
+  color: #fff;
+}
+
+.vanityIconContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+
+  width: 100px;
+}
+
+.vanityIconContainer > .iconLink {
+  text-decoration: none;
+  stroke: #fff;
+  color: #fff;
+}
+
+.iconLink > .vanityIcon {
+  width: 40px;
+  height: 40px;
+  stroke: #fff;
+  color: #fff;
+	transition: stroke 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.iconLink > .vanityIcon:hover {
+  stroke: #c37367;
+  color: #c37367;
+	transition: stroke 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.DotaDisclaimer {
+  width: 800px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #fff;
+}

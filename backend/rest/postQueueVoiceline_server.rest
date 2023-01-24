@@ -1,0 +1,16 @@
+# POST https://dotavoicelineapi.live/voicelines/queueVoiceline
+POST http://localhost:8000/voicelines/queueVoiceline
+?username=ravolol
+&API_KEY=ajtymsFciFZFr32HGRTsnCGOTcA
+Content-Type: application/json
+
+{
+  # "voiceline": "skywrath mage master"
+  "voiceline": "?"
+  # "voiceline": "meepo silver 0"
+  # "voiceline": "meepo silver 1"
+  # "voiceline": "meepo silver 2"
+  # "voiceline": "meepo silver"
+  # "voiceline": "mk platinum"
+  # "voiceline": "caster ?"
+}

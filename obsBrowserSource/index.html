@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket Voiceline Display Page</title>
+  
+  <script>
+    const expressTemplateData = <%= templateData %>;
+  </script>
+  <script type="module" src="src/index.ts"></script>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div id="connectionNotification" ></div>
+  <div id="disconnectionNotification"></div>
+  <div id="voicelineChatContainer"></div>
+  </div>
+</body>
+</html>

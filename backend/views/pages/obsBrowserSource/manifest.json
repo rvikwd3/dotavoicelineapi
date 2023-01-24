@@ -1,0 +1,21 @@
+{
+  "fonts/radiance-bold.ttf": {
+    "file": "assets/obsBrowserSource-radiance-bold.ttf",
+    "src": "fonts/radiance-bold.ttf"
+  },
+  "index.html": {
+    "file": "assets/obsBrowserSource-index.js",
+    "src": "index.html",
+    "isEntry": true,
+    "css": [
+      "assets/obsBrowserSource-index.css"
+    ],
+    "assets": [
+      "assets/obsBrowserSource-radiance-bold.ttf"
+    ]
+  },
+  "index.css": {
+    "file": "assets/obsBrowserSource-index.css",
+    "src": "index.css"
+  }
+}

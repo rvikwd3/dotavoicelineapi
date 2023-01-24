@@ -1,0 +1,174 @@
+{
+  "assets/images/copyObsBrowserSource.png": {
+    "file": "assets/frontend-copyObsBrowserSource.png",
+    "src": "assets/images/copyObsBrowserSource.png"
+  },
+  "assets/images/pasteObsBrowserSource.png": {
+    "file": "assets/frontend-pasteObsBrowserSource.png",
+    "src": "assets/images/pasteObsBrowserSource.png"
+  },
+  "assets/images/addSource.png": {
+    "file": "assets/frontend-addSource.png",
+    "src": "assets/images/addSource.png"
+  },
+  "assets/images/nightbotLogin.png": {
+    "file": "assets/frontend-nightbotLogin.png",
+    "src": "assets/images/nightbotLogin.png"
+  },
+  "assets/images/createNewSource.png": {
+    "file": "assets/frontend-createNewSource.png",
+    "src": "assets/images/createNewSource.png"
+  },
+  "assets/images/nightbotCustomClick.png": {
+    "file": "assets/frontend-nightbotCustomClick.png",
+    "src": "assets/images/nightbotCustomClick.png"
+  },
+  "assets/images/selectSource.png": {
+    "file": "assets/frontend-selectSource.png",
+    "src": "assets/images/selectSource.png"
+  },
+  "assets/images/nightbotSubmitCommand.png": {
+    "file": "assets/frontend-nightbotSubmitCommand.png",
+    "src": "assets/images/nightbotSubmitCommand.png"
+  },
+  "assets/images/nightbotAddCommand.png": {
+    "file": "assets/frontend-nightbotAddCommand.png",
+    "src": "assets/images/nightbotAddCommand.png"
+  },
+  "assets/images/pasteNightbotCommand.png": {
+    "file": "assets/frontend-pasteNightbotCommand.png",
+    "src": "assets/images/pasteNightbotCommand.png"
+  },
+  "assets/images/heroImage.png": {
+    "file": "assets/frontend-heroImage.png",
+    "src": "assets/images/heroImage.png"
+  },
+  "assets/images/registerClick.png": {
+    "file": "assets/frontend-registerClick.png",
+    "src": "assets/images/registerClick.png"
+  },
+  "assets/images/twitchAuthorizeClick.png": {
+    "file": "assets/frontend-twitchAuthorizeClick.png",
+    "src": "assets/images/twitchAuthorizeClick.png"
+  },
+  "assets/images/meepoVoicelinesDecontrast.png": {
+    "file": "assets/frontend-meepoVoicelinesDecontrast.png",
+    "src": "assets/images/meepoVoicelinesDecontrast.png"
+  },
+  "assets/images/copyCommandClick.png": {
+    "file": "assets/frontend-copyCommandClick.png",
+    "src": "assets/images/copyCommandClick.png"
+  },
+  "assets/images/pasteCommandChat.png": {
+    "file": "assets/frontend-pasteCommandChat.png",
+    "src": "assets/images/pasteCommandChat.png"
+  },
+  "assets/images/playVoiceline.png": {
+    "file": "assets/frontend-playVoiceline.png",
+    "src": "assets/images/playVoiceline.png"
+  },
+  "assets/images/silverPlusTier.png": {
+    "file": "assets/frontend-silverPlusTier.png",
+    "src": "assets/images/silverPlusTier.png"
+  },
+  "assets/fonts/radiance/radiance.eot": {
+    "file": "assets/frontend-radiance.eot",
+    "src": "assets/fonts/radiance/radiance.eot"
+  },
+  "assets/fonts/radiance/radiance-bold.eot": {
+    "file": "assets/frontend-radiance-bold.eot",
+    "src": "assets/fonts/radiance/radiance-bold.eot"
+  },
+  "assets/fonts/radiance/radiance.woff2": {
+    "file": "assets/frontend-radiance.woff2",
+    "src": "assets/fonts/radiance/radiance.woff2"
+  },
+  "assets/fonts/radiance/radiance-bold.woff2": {
+    "file": "assets/frontend-radiance-bold.woff2",
+    "src": "assets/fonts/radiance/radiance-bold.woff2"
+  },
+  "assets/fonts/radiance/radiance-bold.woff": {
+    "file": "assets/frontend-radiance-bold.woff",
+    "src": "assets/fonts/radiance/radiance-bold.woff"
+  },
+  "assets/fonts/radiance/radiance.ttf": {
+    "file": "assets/frontend-radiance.ttf",
+    "src": "assets/fonts/radiance/radiance.ttf"
+  },
+  "assets/fonts/radiance/radiance-bold.ttf": {
+    "file": "assets/frontend-radiance-bold.ttf",
+    "src": "assets/fonts/radiance/radiance-bold.ttf"
+  },
+  "assets/fonts/radiance/radiance.svg": {
+    "file": "assets/frontend-radiance.svg",
+    "src": "assets/fonts/radiance/radiance.svg"
+  },
+  "assets/fonts/radiance/radiance-bold.svg": {
+    "file": "assets/frontend-radiance-bold.svg",
+    "src": "assets/fonts/radiance/radiance-bold.svg"
+  },
+  "index.html": {
+    "file": "assets/frontend-main.js",
+    "src": "index.html",
+    "isEntry": true,
+    "imports": [
+      "_frontend-nightbotSubmitCommand.js"
+    ],
+    "css": [
+      "assets/frontend-index2.css"
+    ],
+    "assets": [
+      "assets/frontend-heroImage.png",
+      "assets/frontend-silverPlusTier.png",
+      "assets/frontend-meepoVoicelinesDecontrast.png",
+      "assets/frontend-copyCommandClick.png",
+      "assets/frontend-pasteCommandChat.png",
+      "assets/frontend-playVoiceline.png",
+      "assets/frontend-registerClick.png",
+      "assets/frontend-twitchAuthorizeClick.png",
+      "assets/frontend-radiance.eot",
+      "assets/frontend-radiance.woff2",
+      "assets/frontend-radiance.ttf",
+      "assets/frontend-radiance.svg",
+      "assets/frontend-radiance-bold.eot",
+      "assets/frontend-radiance-bold.woff2",
+      "assets/frontend-radiance-bold.woff",
+      "assets/frontend-radiance-bold.ttf",
+      "assets/frontend-radiance-bold.svg"
+    ]
+  },
+  "userRegistrationPage/index.html": {
+    "file": "assets/frontend-register.js",
+    "src": "userRegistrationPage/index.html",
+    "isEntry": true,
+    "imports": [
+      "_frontend-nightbotSubmitCommand.js"
+    ],
+    "css": [
+      "assets/frontend-index.css"
+    ]
+  },
+  "_frontend-nightbotSubmitCommand.js": {
+    "file": "assets/frontend-nightbotSubmitCommand.js",
+    "assets": [
+      "assets/frontend-copyObsBrowserSource.png",
+      "assets/frontend-pasteObsBrowserSource.png",
+      "assets/frontend-addSource.png",
+      "assets/frontend-selectSource.png",
+      "assets/frontend-createNewSource.png",
+      "assets/frontend-nightbotLogin.png",
+      "assets/frontend-nightbotCustomClick.png",
+      "assets/frontend-nightbotAddCommand.png",
+      "assets/frontend-pasteNightbotCommand.png",
+      "assets/frontend-nightbotSubmitCommand.png"
+    ]
+  },
+  "userRegistrationPage/index.css": {
+    "file": "assets/frontend-index.css",
+    "src": "userRegistrationPage/index.css"
+  },
+  "index.css": {
+    "file": "assets/frontend-index2.css",
+    "src": "index.css"
+  }
+}

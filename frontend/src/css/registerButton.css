@@ -1,0 +1,79 @@
+.registerButtonSmall {
+  /*
+  * Without width the font makes the button 199.03px
+  * the non-integer width causes the button to shrink
+  * on hover animation
+  */
+  width: 200px;
+
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 48px;
+  padding: 10px 25px;
+
+  box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.5);
+
+  /* Reverse animation when hover is removed */
+	transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.registerButtonSmall:hover {
+  transform: translate(0, -4px);
+	transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.registerButtonLarge {
+  width: 300px;
+
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 48px;
+  padding: 10px 25px;
+
+  box-shadow: 0px 4px 16px 2px rgba(0, 0, 0, 0.5);
+
+  /* Reverse animation when hover is removed */
+	transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.registerButtonLarge:hover {
+  transform: translate(0, -8px);
+	transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.seaGreen {
+  background: linear-gradient(180deg, #57CC99 0%, #00A587 100%);
+}
+.pastelRed {
+  background: linear-gradient(180deg, #C47367 0%, #C74C3C 100%);
+}
+
+.registerButtonSmall > .registerIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.registerButtonLarge > .registerIcon {
+  width: 40px;
+  height: 40px;
+}
+
+.registerButtonSmall > .registerButtonText {
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.registerButtonLarge > .registerButtonText {
+  font-weight: 800;
+  font-size: 22px;
+  color: #ffffff;
+}

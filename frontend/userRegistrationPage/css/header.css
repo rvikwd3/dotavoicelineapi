@@ -1,0 +1,42 @@
+.pageHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 66%;
+  height: 30px;
+  padding-top: 80px;
+
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.headerTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 13px;
+}
+
+#headerTitleIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.headerNavLinkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 44px;
+}
+
+.headerNavLink{
+  opacity: 0.6;
+  transition: opacity 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.headerNavLink:hover {
+  transition: opacity 0.2s cubic-bezier(0.65, 0, 0.35, 1);
+  opacity: 1;
+}

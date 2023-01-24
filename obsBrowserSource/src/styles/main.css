@@ -1,0 +1,245 @@
+@font-face {
+  font-family: "Radiance Bold";
+  src: url(../../fonts/radiance-bold.ttf),
+    url(https://dotavoicelineapi.live/static/fonts/radiance-bold.ttf);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Radiance Bold";
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+img {
+  /* image-rendering: crisp-edges; */
+  object-fit: cover;
+}
+
+#pageTitle {
+  text-align: center;
+}
+
+#browserSourceId {
+  display: none;
+}
+
+#socketIoServerUri {
+  display: none;
+}
+
+#connectionNotification {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: greenyellow;
+  z-index: 1;
+  opacity: 0;
+}
+
+.connected {
+  animation: 5s linear 0s forwards blip;
+}
+
+#disconnectionNotification {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: red;
+  z-index: 1;
+  opacity: 0;
+}
+
+.disconnected {
+  animation: 2s linear 0s infinite constantBlip;
+}
+
+@keyframes blip {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 1;
+  }
+}
+
+@keyframes constantBlip {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#voicelineChatContainer {
+  width: 850px;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+/* push down text to be in the middle */
+.topMarginForMiddle {
+  margin-top: 3px;
+}
+
+.voicelineItem {
+  display: flex;
+  flex-direction: row;
+
+  box-decoration-break: clone;
+  animation: appear 0.5s cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal forwards;
+}
+
+.heroAvatar {
+  width: 57px;
+  height: 32px;
+  margin-right: 4px;
+  margin-left: 4px;
+}
+
+.dotaPlusTier {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.twitchUsername {
+  margin-right: 5px;
+  margin-left: 5px;
+  /* vertical-align: middle; */
+  white-space: nowrap;
+  filter: drop-shadow(0px 1px black) drop-shadow(1px 1px black);
+}
+
+.voicelineColon {
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0px 1px black) drop-shadow(1px 1px black);
+  vertical-align: middle;
+  background-image: -webkit-linear-gradient(#faeac9, #faeac9);
+}
+
+.voicelineIcon {
+  width: 22px;
+  height: 22px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.voicelineIconContainer {
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.voicelineTextContainer {
+  right: block;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.voicelineText {
+  display: inline;
+
+  box-decoration-break: slice;
+  -webkit-box-decoration-break: slice;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* filter: drop-shadow(black 1px 1px) drop-shadow(black 0px 2px) drop-shadow(black 1.5px 1px); */
+  filter: drop-shadow(black 0px 2px) drop-shadow(black 1.5px 1px);
+}
+
+/**
+* Dota plus tier text color gradients
+*   Text clips onto the background gradient using '-webkit-background-clip: text'
+*/
+.bronze {
+  background-image: -webkit-linear-gradient(#fadd9a, #e2b276);
+}
+
+.silver {
+  background-image: -webkit-linear-gradient(#dff1f4, #add7e0);
+}
+
+.gold {
+  background-image: -webkit-linear-gradient(#fdfbd2, #e9e463);
+}
+
+.platinum {
+  background-image: -webkit-linear-gradient(#dae7ff, #5d9eff);
+}
+
+.master {
+  background-image: -webkit-linear-gradient(#dbc6ff, #8326c5);
+}
+
+.grandmaster {
+  background-image: -webkit-linear-gradient(#f3a8a8, #e01333);
+}
+
+.bonus {
+  background-image: -webkit-linear-gradient(#fcffeb, #fafac6);
+}
+
+.bag {
+  background-image: -webkit-linear-gradient(#dff1f4, #add7e0);
+}
+
+.caster {
+  background-image: -webkit-linear-gradient(#dff1f4, #add7e0);
+}
+
+/* Animations */
+
+.disappear {
+  animation: disappear 0.5s cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal forwards;
+}
+
+.appear {
+  animation: appear 0.5s cubic-bezier(0.33, 1, 0.68, 1) 0s 1 normal forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

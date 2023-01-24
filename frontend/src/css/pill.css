@@ -1,0 +1,50 @@
+.darkPill, .lightPill {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  padding: 12px 24px;
+  border-radius: 48px;
+
+  cursor: pointer;
+
+  /* Transition dark to light background vice-versa */
+	transition: background 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.darkPill {
+  background: #333;
+}
+
+.pillContent {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.darkPill > .pillContent {
+  color: #fff;
+  opacity: 1;
+}
+
+.lightPill > .pillContent {
+  color: #333;
+  opacity: 0.48;
+}
+
+.darkPillIcon {
+  width: 36px;
+  height: 36px;
+
+  stroke: #ffffff;
+  opacity: 1;
+}
+
+.lightPillIcon {
+  width: 36px;
+  height: 36px;
+
+  stroke: #333333;
+  opacity: 0.48;
+}

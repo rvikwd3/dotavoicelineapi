@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "Radiance";
+  src: url("Assets/fonts/radiance/radiance.eot");
+  src: url("Assets/fonts/radiance/radiance.eot?#iefix") format("embedded-opentype"),
+    url("Assets/fonts/radiance/radiance.woff2") format("woff2"), url("/fonts/radiance/radiance.woff") format("woff"),
+    url("Assets/fonts/radiance/radiance.ttf") format("truetype"),
+    url("Assets/fonts/radiance/radiance.svg#radianceregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Radiance";
+  src: url("Assets/fonts/radiance/radiance-bold.eot");
+  src: url("Assets/fonts/radiance/radiance-bold.eot?#iefix") format("embedded-opentype"),
+    url("Assets/fonts/radiance/radiance-bold.woff2") format("woff2"),
+    url("Assets/fonts/radiance/radiance-bold.woff") format("woff"),
+    url("Assets/fonts/radiance/radiance-bold.ttf") format("truetype"),
+    url("Assets/fonts/radiance/radiance-bold.svg#radiancebold") format("svg");
+  font-weight: bold;
+  font-style: bold;
+}
+
+html {
+  font-family: "Raleway", sans-serif;
+}
+
+.epilogue {
+  font-family: "Epilogue", sans-serif;
+}
