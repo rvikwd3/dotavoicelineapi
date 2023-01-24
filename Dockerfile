@@ -51,6 +51,9 @@ COPY --from=frontend /usr/app/frontend/dist/index.html ./views/pages/frontend/in
 COPY --from=frontend /usr/app/frontend/dist/userRegistrationPage/index.html ./views/pages/frontend/userRegistrationPage/index.html
 COPY --from=frontend /usr/app/frontend/dist/assets ./public/assets
 # Build express app for production
+
+RUN find . | sed -e "s/[^-][^\/]*\//  |/g" -e "s/|\([^ ]\)/|-\1/"
+
 RUN npm ci --only=production
 EXPOSE 8000
 CMD [ "node", "src/index.js" ]
