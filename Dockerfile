@@ -21,11 +21,27 @@ RUN npm run prod
 # Asset files are in ./dist/assets/
 
 # ------------
-# Install & run backend
+# Build backend
 # ------------
 FROM node:alpine as backend
 WORKDIR /usr/app/backend
+COPY ./backend/package*.json ./
+COPY ./backend/tsconfig*.json ./
+RUN npm install
+# Bundle app source
 COPY ./backend .
+RUN npm run prod
+
+# ------------
+# Copy files to root and run backend
+# ------------
+FROM node:alpine as run-container
+WORKDIR /usr/app/run
+# Copy over built files from backend into root
+COPY --from=backend /usr/app/backend/dist ./
+COPY --from=backend /usr/app/backend/.env ./
+# Copy over backend public files into public folder
+COPY --from=backend /usr/app/backend/public ./public
 # Copy over built asset & view files from obsBrowserSource
 COPY --from=browserSource /usr/app/browserSource/dist/index.html ./views/pages/obsBrowserSource
 COPY --from=browserSource /usr/app/browserSource/dist/assets ./public/assets
