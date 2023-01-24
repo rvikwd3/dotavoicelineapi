@@ -32,7 +32,7 @@ COPY --from=browserSource /usr/app/browserSource/dist/assets ./public/assets
 # Copy over built asset & view files from frontend
 COPY --from=frontend /usr/app/frontend/dist/index.html ./views/pages/frontend/index.html
 COPY --from=frontend /usr/app/frontend/dist/userRegistrationPage/index.html ./views/pages/frontend/userRegistrationPage/index.html
-COPY --from=frontent /usr/app/frontend/dist/assets ./public/assets
+COPY --from=frontend /usr/app/frontend/dist/assets ./public/assets
 # Build express app for production
 RUN npm ci --only=production
 EXPOSE 8000
