@@ -1,5 +1,10 @@
 import { NextFunction, Request, Response } from "express";
-import { ApplicationError, BrowserSourceRequest, HttpCode, TwitchAuthRequest } from "../types";
+import {
+  ApplicationError,
+  BrowserSourceRequest,
+  HttpCode,
+  TwitchAuthRequest,
+} from "../types";
 import Router from "express-promise-router";
 import {
   findUserByTwitchId,
@@ -15,20 +20,24 @@ router.get("/", (_req: Request, res: Response) => {
   res.send(`Register as a user or check your registration details`);
 });
 
-router.get("/socketDisplayPage", (req: BrowserSourceRequest, res:Response) => {
-  const {id} = req.query;
-  res.render('pages/obsBrowserSource/index', {
-    templateData: JSON.stringify(
-      {
-        browserSourceId: id,
-        socketIoServerUri: process.env.SOCKETIO_SERVER_URI
-      }
-    )
+router.get("/socketDisplayPage", (req: BrowserSourceRequest, res: Response) => {
+  const { id } = req.query;
+  res.render("pages/obsBrowserSource/index", {
+    templateData: JSON.stringify({
+      browserSourceId: id,
+      socketIoServerUri: process.env.SOCKETIO_SERVER_URI,
+    }),
   });
 });
 
 // eslint-disable-next-line @typescript-eslint/no-misused-promises
-router.get( "/auth", async ( req: TwitchAuthRequest, res: Response, next: NextFunction): Promise<void> => {
+router.get(
+  "/auth",
+  async (
+    req: TwitchAuthRequest,
+    res: Response,
+    next: NextFunction
+  ): Promise<void> => {
     console.log("Starting twitch authentication");
 
     // Get query parameters
@@ -38,17 +47,21 @@ router.get( "/auth", async ( req: TwitchAuthRequest, res: Response, next: NextFu
     if (!req.session?.twitchAuthState) {
       throw new ApplicationError({
         httpCode: HttpCode.BAD_REQUEST,
-        description: "The Twitch Authentication Cookie has possibly expired. Property 'session' missing from /user/auth Request object",
+        description:
+          "The Twitch Authentication Cookie has possibly expired. Property 'session' missing from /user/auth Request object",
       });
     }
     console.log(`Cookie twitchAuthState: ${req.session.twitchAuthState}`);
 
     // Check if state matches provided state correctly
     if (state && decodeURIComponent(state) != req.session.twitchAuthState) {
-      console.log("Received state doesn't match stored cookie-session twitchAuthState");
+      console.log(
+        "Received state doesn't match stored cookie-session twitchAuthState"
+      );
       throw new ApplicationError({
         httpCode: HttpCode.UNAUTHORIZED,
-        description: "Session state and state provided by Twitch Auth do not match",
+        description:
+          "Session state and state provided by Twitch Auth do not match",
       });
     }
 
@@ -60,22 +73,21 @@ router.get( "/auth", async ( req: TwitchAuthRequest, res: Response, next: NextFu
 
       throw new ApplicationError({
         httpCode: HttpCode.UNAUTHORIZED,
-        description: error_description
+        description: error_description,
       });
     }
 
     // Authentication is successful and Authorization Code has been provided in Twitch Redirect
     if (code) {
-
       /* Generate new twitch auth State for the registration pages
-      * We don't want to keep the old authState because that has already been used
-      */
+       * We don't want to keep the old authState because that has already been used
+       */
       const [authUrl, authState] = generateTwitchAuthUrl();
       req.session.twitchAuthState = authState;
 
       try {
-        const access_token = await getTwitchUserAccessToken(code);  // Get access token from twitch OAuth authorization code
-        const twitchUserData = await getTwitchUsersData(access_token);  // Get user data from twitch API
+        const access_token = await getTwitchUserAccessToken(code); // Get access token from twitch OAuth authorization code
+        const twitchUserData = await getTwitchUsersData(access_token); // Get user data from twitch API
         if (twitchUserData) {
           console.log("Successful Twitch User Data Retreival");
 
@@ -83,14 +95,19 @@ router.get( "/auth", async ( req: TwitchAuthRequest, res: Response, next: NextFu
           const foundUser = await findUserByTwitchId(twitchUserData.id);
           if (foundUser) {
             // if a user already exists, and the user has been recently authenticated (not stale)
-            return res.render("pages/frontend/userRegistrationPage/index.html", {
-              pageTitle: 'Registration Already Exists',
-              profileImgSrc: twitchUserData.profile_image_url,
-              login: foundUser.twitchLogin,
-              apiKey: foundUser.apiKey,
-              browserSourceUrl: `/user/socketDisplayPage?id=${foundUser.browserSourceId}`,
-              authUrl: authUrl,
-            });
+            return res.render(
+              "pages/frontend/userRegistrationPage/index.html",
+              {
+                templateData: JSON.stringify({
+                  pageTitle: "Registration Already Exists",
+                  profileImgSrc: twitchUserData.profile_image_url,
+                  login: foundUser.twitchLogin,
+                  apiKey: foundUser.apiKey,
+                  browserSourceUrl: `/user/socketDisplayPage?id=${foundUser.browserSourceId}`,
+                  authUrl: authUrl,
+                }),
+              }
+            );
           } else {
             // generate a new api_key and register the user
             const newUser = await upsertUserToDatabase(
@@ -98,18 +115,23 @@ router.get( "/auth", async ( req: TwitchAuthRequest, res: Response, next: NextFu
               twitchUserData.login
             );
             if (newUser) {
-              return res.render("pages/frontend/userRegistrationPage/index.html", {
-                pageTitle: 'Registration Successful',
-                profileImgSrc: twitchUserData.profile_image_url,
-                login: newUser.twitchLogin,
-                apiKey: newUser.apiKey,
-                browserSourceUrl: `/user/socketDisplayPage?id=${newUser.browserSourceId}`,
-                authUrl: authUrl,
-              });
+              return res.render(
+                "pages/frontend/userRegistrationPage/index.html",
+                {
+                  templateData: JSON.stringify({
+                    pageTitle: "Registration Successful",
+                    profileImgSrc: twitchUserData.profile_image_url,
+                    login: newUser.twitchLogin,
+                    apiKey: newUser.apiKey,
+                    browserSourceUrl: `/user/socketDisplayPage?id=${newUser.browserSourceId}`,
+                    authUrl: authUrl,
+                  }),
+                }
+              );
             } else {
               throw new ApplicationError({
                 httpCode: HttpCode.INTERNAL_SERVER_ERROR,
-                description:`Could not upsert user ${twitchUserData.login} to the database` 
+                description: `Could not upsert user ${twitchUserData.login} to the database`,
               });
             }
           }
