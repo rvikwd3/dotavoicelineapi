@@ -98,14 +98,14 @@ router.get(
             return res.render(
               "pages/frontend/userRegistrationPage/index.html",
               {
-                templateData: JSON.stringify({
+                templateData: {
                   pageTitle: "Registration Already Exists",
                   profileImgSrc: twitchUserData.profile_image_url,
                   login: foundUser.twitchLogin,
                   apiKey: foundUser.apiKey,
-                  browserSourceUrl: `/user/socketDisplayPage?id=${foundUser.browserSourceId}`,
+                  browserSourceId: foundUser.browserSourceId,
                   authUrl: authUrl,
-                }),
+                },
               }
             );
           } else {
@@ -118,14 +118,14 @@ router.get(
               return res.render(
                 "pages/frontend/userRegistrationPage/index.html",
                 {
-                  templateData: JSON.stringify({
+                  templateData: {
                     pageTitle: "Registration Successful",
                     profileImgSrc: twitchUserData.profile_image_url,
                     login: newUser.twitchLogin,
                     apiKey: newUser.apiKey,
-                    browserSourceUrl: `/user/socketDisplayPage?id=${newUser.browserSourceId}`,
+                    browserSourceId: newUser.browserSourceId,
                     authUrl: authUrl,
-                  }),
+                  },
                 }
               );
             } else {

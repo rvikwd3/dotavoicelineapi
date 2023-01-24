@@ -17,11 +17,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dota Voiceline Api - Registration</title>
     <script>
-      const expressTemplateData = <% templateData %>;
+      const expressTemplateData = <%- JSON.stringify(templateData) %>;
     </script>
     <script type="module" crossorigin src="/assets/frontend-register.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/frontend-nightbotSubmitCommand.js">
-    <link rel="stylesheet" href="/assets/frontend-index.css">
+    <link rel="stylesheet" href="/assets/frontend-index2.css">
   </head>
   <body>
     <div id="root"></div>
