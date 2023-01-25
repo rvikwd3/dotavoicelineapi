@@ -1,5 +1,6 @@
 import { SyntheticEvent } from "react";
 import { CopyIcon } from "../../src/icons";
+import { getLink } from "../../src/utils";
 
 type Props = {
   profileImgSrc: string;
@@ -16,7 +17,7 @@ const UserCard = ({ profileImgSrc, login, apiKey, browserSourceId }: Props) => {
 
   const browserSourceCopyClickHandler = (event: SyntheticEvent) => {
     event.preventDefault();
-    navigator.clipboard.writeText(browserSourceId);
+    navigator.clipboard.writeText(getLink("socketDisplayPage").concat(browserSourceId));
   };
 
   return (
