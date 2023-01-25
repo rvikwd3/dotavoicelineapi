@@ -23,10 +23,10 @@ router.get("/", (_req: Request, res: Response) => {
 router.get("/socketDisplayPage", (req: BrowserSourceRequest, res: Response) => {
   const { id } = req.query;
   res.render("pages/obsBrowserSource/index.html", {
-    templateData: JSON.stringify({
+    templateData: {
       browserSourceId: id,
       socketIoServerUri: process.env.SOCKETIO_SERVER_URI,
-    }),
+    },
   });
 });
 
