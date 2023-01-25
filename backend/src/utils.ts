@@ -70,11 +70,12 @@ export const generateNewBrowserSourceId = () => {
 };
 
 export const decrementVoiceline = (voiceline: string) => {
-  const indexMatcher = / ([0-9]*[1-9])$/;
+  const indexMatcher = / (\d+)$/;
 
   const index = indexMatcher.exec(voiceline)?.[1];
   if (!index){
-    console.error(`ERROR: Decrementing index of - ${voiceline}`);
+    console.error(`Couldn't decrement index of '${voiceline}'. Maybe it's a random voiceline?`);
+    return voiceline;
   }
   return voiceline.replace(indexMatcher, index ? `${" "}${Number(index) - 1}` : '...');
 };
